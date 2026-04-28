@@ -87,25 +87,49 @@
     </section>
 
     <!-- Who We Are -->
-            <div class="grid grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" style="width: 100%; height: 600px; object-fit: cover; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
+    <section class="section reveal" style="padding-top: 100px;">
+        <div class="container">
+            <div class="about-modern-grid" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;">
+                <!-- Left: Creative Image Composition -->
+                <div class="about-image-stack" style="position: relative;">
+                    <div style="position: absolute; width: 100%; height: 100%; background: var(--bg-gray); top: 30px; left: -30px; border-radius: 40px; z-index: -1;"></div>
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" style="width: 100%; height: 650px; object-fit: cover; border-radius: 40px; box-shadow: 0 40px 80px rgba(0,0,0,0.1);">
+                    <div style="position: absolute; bottom: -30px; right: -30px; background: var(--secondary-red); color: white; padding: 30px 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(230,57,70,0.3); text-align: center;">
+                        <h3 style="font-size: 2.5rem; font-weight: 800; line-height: 1;">05+</h3>
+                        <p style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;">Years of Excellence</p>
+                    </div>
                 </div>
-                <div>
-                    <h2 style="font-size: 3rem; margin-bottom: 25px;">About Us – <span class="text-red">Revanta Growth Media</span></h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">At Revanta Growth Media, we are passionate about transforming businesses into powerful digital brands. We are a full-service IT and Digital Marketing company dedicated to helping startups, small businesses, and enterprises grow their online presence, generate quality leads, and achieve measurable results.</p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">With a team of experienced marketers, creative designers, and skilled developers, we deliver complete digital solutions — from website design and development to performance marketing, SEO, and automation.</p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">Our approach is simple yet powerful — we combine strategy, creativity, and technology to build solutions that not only look great but also drive real business growth. We don’t just create websites or run ads — we build digital systems that convert visitors into customers and help businesses scale faster.</p>
-                    <p style="font-weight: 600; color: var(--primary-blue);">👉 Whether you want to launch your brand, generate leads, or increase sales, Revanta Growth Media is your trusted growth partner.</p>
+
+                <!-- Right: Content -->
+                <div class="about-content">
+                    <span class="badge" style="margin-bottom: 20px;">Premium Growth Partner</span>
+                    <h2 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 30px; color: var(--primary-blue);">Transforming Businesses into <span class="text-red">Digital Brands</span></h2>
                     
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px;">
-                        <div style="background: var(--bg-gray); padding: 35px; border-radius: 20px;">
-                            <h4 style="color: var(--secondary-red); margin-bottom: 15px; font-size: 1.4rem;">🎯 Our Mission</h4>
-                            <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.6;">Our mission is to empower businesses with innovative digital solutions that drive growth, increase visibility, and maximize ROI. We aim to deliver result-oriented strategies and become a part of your growth journey.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #444; margin-bottom: 30px;">At Revanta Growth Media, we are passionate about transforming businesses into powerful digital brands. We are a full-service IT and Digital Marketing company dedicated to helping startups, small businesses, and enterprises grow their online presence, generate quality leads, and achieve measurable results.</p>
+                    
+                    <div style="display: grid; gap: 15px; margin-bottom: 40px;">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--secondary-red);"></i>
+                            <span style="font-weight: 600; color: var(--text-dark);">Build digital systems that convert visitors into customers.</span>
                         </div>
-                        <div style="background: var(--bg-gray); padding: 35px; border-radius: 20px;">
-                            <h4 style="color: var(--secondary-red); margin-bottom: 15px; font-size: 1.4rem;">🌍 Our Vision</h4>
-                            <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.6;">To become one of India’s most trusted and leading digital growth companies. We envision a future where every business can grow online with the right strategy and one-stop solution for all IT needs.</p>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--secondary-red);"></i>
+                            <span style="font-weight: 600; color: var(--text-dark);">Combine strategy, creativity, and technology for real growth.</span>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--secondary-red);"></i>
+                            <span style="font-weight: 600; color: var(--text-dark);">Scale faster with performance-driven marketing solutions.</span>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                        <div style="background: var(--bg-gray); padding: 30px; border-radius: 20px; transition: 0.3s;" onmouseover="this.style.background='#fff'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.05)'" onmouseout="this.style.background='var(--bg-gray)'; this.style.boxShadow='none'">
+                            <h4 style="color: var(--secondary-red); margin-bottom: 10px;"><i class="fa-solid fa-bullseye"></i> Our Mission</h4>
+                            <p style="font-size: 0.85rem; opacity: 0.8; line-height: 1.6;">Empower businesses with innovative digital solutions that drive growth, increase visibility, and maximize ROI.</p>
+                        </div>
+                        <div style="background: var(--bg-gray); padding: 30px; border-radius: 20px; transition: 0.3s;" onmouseover="this.style.background='#fff'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.05)'" onmouseout="this.style.background='var(--bg-gray)'; this.style.boxShadow='none'">
+                            <h4 style="color: var(--secondary-red); margin-bottom: 10px;"><i class="fa-solid fa-eye"></i> Our Vision</h4>
+                            <p style="font-size: 0.85rem; opacity: 0.8; line-height: 1.6;">Become India’s most trusted growth partner, helping thousands of businesses succeed in the digital world.</p>
                         </div>
                     </div>
                 </div>

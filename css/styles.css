@@ -54,7 +54,7 @@ img { max-width: 100%; display: block; }
 }
 
 .logo-text .highlight {
-    color: #ff8c00; /* Distinct Orange */
+    color: var(--secondary-red); /* Updated to Red */
 }
 
 .header.scrolled .logo-text {
@@ -62,7 +62,7 @@ img { max-width: 100%; display: block; }
 }
 
 .header.scrolled .logo-text .highlight {
-    color: #ff8c00;
+    color: var(--secondary-red);
 }
 
 /* --- Header & Nav --- */
@@ -552,7 +552,7 @@ img { max-width: 100%; display: block; }
 }
 
 .footer .logo-text { color: var(--white) !important; font-size: 1.6rem; margin-bottom: 25px; display: inline-block; }
-.footer .highlight { color: var(--orange) !important; }
+.footer .highlight { color: var(--secondary-red) !important; }
 
 .footer-col h4 { 
     color: var(--white); 

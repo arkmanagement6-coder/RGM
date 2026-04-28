@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             if (window.innerWidth <= 992 && link.parentElement.classList.contains('dropdown')) {
-                e.preventDefault();
-                link.parentElement.classList.toggle('active');
+                // On mobile, all menus are expanded, so just navigate
+                return;
             } else if (window.innerWidth <= 992) {
                 navMenu.classList.remove('active');
                 overlay.classList.remove('active');

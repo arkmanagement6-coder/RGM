@@ -219,11 +219,13 @@ img { max-width: 100%; display: block; }
         opacity: 1; 
         visibility: visible; 
         box-shadow: none; 
-        display: none; 
+        display: block !important; /* Force all submenus to show */
         padding: 0 0 10px 15px; 
         border-top: none;
         background: transparent;
     }
+
+    .nav-btn i { display: none !important; } /* Hide dropdown arrows on mobile */
 
     .dropdown-menu li a {
         padding: 12px 0;

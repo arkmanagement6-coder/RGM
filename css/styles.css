@@ -236,10 +236,40 @@ img { max-width: 100%; display: block; }
     .about-image-stack img { height: 450px !important; }
 }
 
+/* --- Portfolio Grid Responsive --- */
+@media (max-width: 768px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-overlay { opacity: 1; background: rgba(0,0,0,0.6); }
+}
+
+/* --- Contact Container Responsive --- */
+@media (max-width: 992px) {
+    .contact-container { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
+    .info-card { order: 2; }
+    .contact-form { order: 1; }
+}
+
+/* --- Inner Hero Responsive --- */
+@media (max-width: 768px) {
+    .inner-hero { padding: 120px 0 60px; }
+    .inner-hero h1 { font-size: 2.5rem !important; }
+}
+
+/* --- Footer Responsive Refinement --- */
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .footer-col.brand-col { align-items: center; display: flex; flex-direction: column; }
+    .social-links { justify-content: center; }
+}
+
+/* --- Stats Section Responsive --- */
+@media (max-width: 768px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .stat-item h2 { font-size: 2.5rem; }
+}
+
 @media (max-width: 480px) {
-    .section { padding: 60px 0; }
-    h2 { font-size: 1.8rem !important; }
-    .badge { font-size: 0.7rem; }
+    .stats-grid { grid-template-columns: 1fr; }
 }
 
 .mobile-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: var(--primary-blue); }

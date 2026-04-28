@@ -578,13 +578,13 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-    .footer { text-align: center; }
-    .footer-grid { grid-template-columns: 1fr; gap: 50px; }
-    .footer-col h4::after { left: 50%; transform: translateX(-50%); }
-    .social-links { justify-content: center; }
-    .footer-col.brand-col { align-items: center; display: flex; flex-direction: column; }
-    .footer .logo-text { font-size: 1.4rem; line-height: 1.4; }
-    .footer-bottom { margin-top: 40px; }
+    .footer { text-align: left; }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-col h4::after { left: 0; transform: none; }
+    .social-links { justify-content: flex-start; }
+    .footer-col.brand-col { align-items: flex-start; display: block; }
+    .footer .logo-text { font-size: 1.5rem; line-height: 1.4; }
+    .footer-bottom { margin-top: 40px; text-align: left; }
 }
 
 @media (max-width: 480px) {

@@ -230,9 +230,7 @@ img { max-width: 100%; display: block; }
     .slide-right { order: 1; position: absolute; top: 15%; left: 50%; transform: translateX(-50%) scale(0.5); opacity: 0.3; z-index: 1; pointer-events: none; height: 200px; overflow: hidden; }
     .glass-dashboard, .glass-browser, .glass-sphere { margin: 0 auto; }
     
-    .slider-arrow { width: 35px; height: 35px; background: rgba(255,255,255,0.2); font-size: 0.8rem; top: 50%; transform: translateY(-50%); }
-    .slider-arrow.prev { left: 10px; }
-    .slider-arrow.next { right: 10px; }
+
     
     .slider-dots { bottom: 15px; }
     .dot { width: 8px; height: 8px; }
@@ -442,10 +440,7 @@ img { max-width: 100%; display: block; }
 .badge { display: inline-block; padding: 6px 16px; background-color: var(--secondary-red); border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin: 0 auto; }
 .hero-btns { display: flex; gap: 20px; justify-content: center; }
 
-.slider-controls button { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.2); color: var(--white); width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 10; }
-.slider-controls button:hover { background: var(--secondary-red); }
-.prev-slide { left: 30px; }
-.next-slide { right: 30px; }
+
 .slider-dots { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10; }
 .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; }
 .dot.active { background: var(--white); width: 25px; border-radius: 10px; }

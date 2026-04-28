@@ -1084,19 +1084,7 @@ img { max-width: 100%; display: block; }
 .card-1 { top: 20px; left: 0; animation-delay: 0s; z-index: 2; }
 .card-2 { top: 120px; right: 0; animation-delay: -3s; z-index: 1; transform: scale(0.9); opacity: 0.9; }
 
-.card-3 { 
-    top: 250px; left: 30px; 
-    width: 280px; 
-    background: rgba(255,255,255,0.1); 
-    backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 20px;
-    animation-delay: -1.5s;
-    z-index: 3;
-}
-.store-header { color: white; font-weight: 700; margin-bottom: 15px; display: flex; justify-content: space-between; }
-.store-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.store-grid div { height: 60px; background: rgba(255,255,255,0.2); border-radius: 8px; }
+
 
 @keyframes floatAnimation {
     0% { transform: translateY(0px); }

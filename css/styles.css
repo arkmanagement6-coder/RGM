@@ -600,6 +600,44 @@ img { max-width: 100%; display: block; }
 
 .social-links a:hover { background: var(--secondary-red); transform: translateY(-3px); }
 
+/* --- Inner Pages Hero --- */
+.inner-hero {
+    padding: 150px 0 80px;
+    background: linear-gradient(135deg, rgba(10, 37, 92, 0.95), rgba(10, 37, 92, 0.98)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    text-align: center;
+    color: var(--white);
+}
+
+.inner-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* --- About Page Refactored Layouts --- */
+.about-section { padding-top: 100px; }
+.about-modern-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+.about-image-stack { position: relative; }
+.about-image-bg { position: absolute; width: 100%; height: 100%; background: var(--bg-gray); top: 30px; left: -30px; border-radius: 40px; z-index: -1; }
+.about-main-img { width: 100%; height: 650px; object-fit: cover; border-radius: 40px; box-shadow: 0 40px 80px rgba(0,0,0,0.1); }
+.about-years-badge { position: absolute; bottom: -30px; right: -30px; background: var(--secondary-red); color: white; padding: 30px 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(230,57,70,0.3); text-align: center; }
+.about-years-badge h3 { font-size: 2.5rem; font-weight: 800; line-height: 1; margin: 0; color: white; }
+.about-years-badge p { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; margin-bottom: 0; color: white; }
+
+.about-main-heading { font-size: 3.5rem; line-height: 1.1; margin-bottom: 30px; color: var(--primary-blue); }
+.about-main-desc { font-size: 1.15rem; line-height: 1.8; color: #444; margin-bottom: 30px; }
+.about-check-list { display: grid; gap: 15px; margin-bottom: 40px; }
+.check-item { display: flex; gap: 12px; align-items: center; }
+.check-item i { color: var(--secondary-red); }
+.check-item span { font-weight: 600; color: var(--text-dark); }
+
+.mission-vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.mv-box { background: var(--bg-gray); padding: 30px; border-radius: 20px; transition: 0.3s; }
+.mv-box:hover { background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.mv-box h4 { color: var(--secondary-red); margin-bottom: 10px; }
+.mv-box p { font-size: 0.85rem; opacity: 0.8; line-height: 1.6; margin-bottom: 0; }
+
 .footer-bottom { 
     border-top: 1px solid rgba(255, 255, 255, 0.1); 
     margin-top: 60px; 
@@ -642,6 +680,15 @@ img { max-width: 100%; display: block; }
     .footer-col.brand-col { align-items: flex-start !important; display: block !important; }
     .footer .logo-text { font-size: 1.5rem !important; line-height: 1.4 !important; }
     .footer-bottom { margin-top: 40px !important; text-align: left !important; }
+    
+    .inner-hero { padding: 120px 0 50px; }
+    .inner-hero h1 { font-size: 2.2rem; }
+    
+    .about-modern-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-main-heading { font-size: 2.2rem; }
+    .about-main-img { height: 400px; }
+    .mission-vision-grid { grid-template-columns: 1fr; }
+    .about-section { padding-top: 60px; }
 }
 
 @media (max-width: 480px) {

@@ -65,8 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let autoSlide = setInterval(nextSlide, slideInterval);
 
-        nextBtn.addEventListener('click', () => { clearInterval(autoSlide); nextSlide(); autoSlide = setInterval(nextSlide, slideInterval); });
-        prevBtn.addEventListener('click', () => { clearInterval(autoSlide); prevSlide(); autoSlide = setInterval(nextSlide, slideInterval); });
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => { clearInterval(autoSlide); nextSlide(); autoSlide = setInterval(nextSlide, slideInterval); });
+        }
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => { clearInterval(autoSlide); prevSlide(); autoSlide = setInterval(nextSlide, slideInterval); });
+        }
     }
 
     // --- Mobile Menu Toggle ---

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | Revanta Growth Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .inner-hero { background: var(--primary-blue); padding: 150px 0 80px; text-align: center; color: var(--white); }
+        .blog-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 30px; }
+        .blog-img { height: 250px; background: #eee; }
+        .blog-img img { width: 100%; height: 100%; object-fit: cover; }
+        .blog-content { padding: 30px; }
+        .blog-content h3 { margin-bottom: 15px; color: var(--primary-blue); }
+        .blog-content p { font-size: 0.95rem; opacity: 0.8; margin-bottom: 20px; }
+        .read-btn { color: var(--secondary-red); font-weight: 700; }
+    </style>
+</head>
+<body>
+    <header class="header scrolled">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="revanta">Revanta</span><span class="growth">Growth</span><span class="media">Media</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-btn">Home</a></li>
+                    <li><a href="about.html" class="nav-btn">About</a></li>
+                    <li><a href="team.html" class="nav-btn">Our Team</a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="nav-btn">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html#web-dev">Website Design & Development</a></li>
+                            <li><a href="services.html#ecommerce">E-commerce Store Design & Dev</a></li>
+                            <li><a href="services.html#google-ads">Google Ads</a></li>
+                            <li><a href="services.html#meta-ads">Meta Ads</a></li>
+                            <li><a href="services.html#seo">SEO</a></li>
+                            <li><a href="services.html#smm">Social Media Management</a></li>
+                            <li><a href="services.html#whatsapp">WhatsApp Marketing</a></li>
+                            <li><a href="services.html#crm">CRM Integration</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html" class="nav-btn">Portfolio</a></li>
+                    <li><a href="blogs.html" class="nav-btn active">Blogs</a></li>
+                    <li><a href="contact.html" class="nav-btn">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://wa.me/918433206010" class="btn btn-whatsapp" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Whatsapp Connect
+                </a>
+                <button class="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="inner-hero">
+        <div class="container">
+            <h1>Digital Growth Blog</h1>
+            <p>Tips, tricks and strategies to grow your business online.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="blog-card">
+                    <div class="blog-img"><img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c1d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"></div>
+                    <div class="blog-content">
+                        <h3>10 SEO Tips for 2026</h3>
+                        <p>How to rank your website on the first page of Google with latest algorithm changes.</p>
+                        <a href="#" class="read-btn">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img"><img src="https://images.unsplash.com/photo-1557838923-2985c318be48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"></div>
+                    <div class="blog-content">
+                        <h3>Facebook Ads Strategy</h3>
+                        <p>Generate high-quality leads using targeted Meta advertising campaigns.</p>
+                        <a href="#" class="read-btn">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Revanta Growth Media. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

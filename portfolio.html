@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Revanta Growth Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .inner-hero { background: var(--primary-blue); padding: 150px 0 80px; text-align: center; color: var(--white); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .portfolio-item { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); position: relative; }
+        .portfolio-item img { width: 100%; transition: var(--transition); }
+        .portfolio-item:hover img { transform: scale(1.1); }
+        .portfolio-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; opacity: 0; transition: var(--transition); }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+    </style>
+</head>
+<body>
+    <header class="header scrolled">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="revanta">Revanta</span><span class="growth">Growth</span><span class="media">Media</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-btn">Home</a></li>
+                    <li><a href="about.html" class="nav-btn">About</a></li>
+                    <li><a href="team.html" class="nav-btn">Our Team</a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="nav-btn">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html#web-dev">Website Design & Development</a></li>
+                            <li><a href="services.html#ecommerce">E-commerce Store Design & Dev</a></li>
+                            <li><a href="services.html#google-ads">Google Ads</a></li>
+                            <li><a href="services.html#meta-ads">Meta Ads</a></li>
+                            <li><a href="services.html#seo">SEO</a></li>
+                            <li><a href="services.html#smm">Social Media Management</a></li>
+                            <li><a href="services.html#whatsapp">WhatsApp Marketing</a></li>
+                            <li><a href="services.html#crm">CRM Integration</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html" class="nav-btn active">Portfolio</a></li>
+                    <li><a href="blogs.html" class="nav-btn">Blogs</a></li>
+                    <li><a href="contact.html" class="nav-btn">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://wa.me/918433206010" class="btn btn-whatsapp" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Whatsapp Connect
+                </a>
+                <button class="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="inner-hero">
+        <div class="container">
+            <h1>Our Success Stories</h1>
+            <p>Showcasing our recent website and marketing projects.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work">
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce Store</h3>
+                        <p>Luxury Fashion Brand</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda5366392?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work">
+                    <div class="portfolio-overlay">
+                        <h3>Digital Marketing</h3>
+                        <p>3X Sales Growth for Tech Startup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Revanta Growth Media. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

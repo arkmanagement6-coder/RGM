@@ -578,7 +578,16 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-    .grid-3 { grid-template-columns: 1fr; }
-    .slide h1 { font-size: 2.5rem; }
-    .header-actions .btn-whatsapp { display: none; }
+    .footer { text-align: center; }
+    .footer-grid { grid-template-columns: 1fr; gap: 50px; }
+    .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+    .social-links { justify-content: center; }
+    .footer-col.brand-col { align-items: center; display: flex; flex-direction: column; }
+    .footer .logo-text { font-size: 1.4rem; line-height: 1.4; }
+    .footer-bottom { margin-top: 40px; }
+}
+
+@media (max-width: 480px) {
+    .footer { padding: 60px 0 40px; }
+    .footer-grid { gap: 40px; }
 }

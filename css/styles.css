@@ -615,6 +615,13 @@ img { max-width: 100%; display: block; }
     line-height: 1.2;
 }
 
+/* --- Legal Pages --- */
+.legal-content h2 { font-size: 1.8rem; color: var(--primary-blue); margin-top: 50px; margin-bottom: 20px; border-bottom: 1px solid var(--bg-gray); padding-bottom: 10px; }
+.legal-content h3 { font-size: 1.3rem; color: var(--text-dark); margin-top: 30px; margin-bottom: 15px; }
+.legal-content p { font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px; }
+.legal-content ul { padding-left: 20px; margin-bottom: 30px; }
+.legal-content li { font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 10px; }
+
 /* --- About Page Refactored Layouts --- */
 .about-section { padding-top: 100px; }
 .about-modern-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }

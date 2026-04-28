@@ -10,11 +10,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .inner-hero { background: var(--primary-blue); padding: 150px 0 80px; text-align: center; color: var(--white); }
-        .service-detail { padding: 80px 0; border-bottom: 1px solid #eee; }
-        .service-detail:nth-child(even) { background: var(--bg-gray); }
-        .service-detail h2 { font-size: 2.2rem; margin-bottom: 15px; color: var(--primary-blue); }
-        .service-detail i { color: var(--secondary-red); font-size: 2.5rem; margin-bottom: 20px; }
+        .services-hero { background: var(--primary-blue); padding: 160px 0 100px; text-align: center; color: var(--white); }
+        
+        .service-nav { background: var(--white); position: sticky; top: 70px; z-index: 900; padding: 15px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.05); overflow-x: auto; white-space: nowrap; }
+        .service-nav-links { display: flex; justify-content: center; gap: 20px; }
+        .service-nav-links a { color: var(--text-dark); font-weight: 600; font-size: 0.9rem; padding: 8px 15px; border-radius: 20px; }
+        .service-nav-links a:hover { color: var(--secondary-red); background: var(--bg-gray); }
+
+        .service-row { padding: 100px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .service-row:nth-child(even) { direction: rtl; }
+        .service-row:nth-child(even) .service-text { direction: ltr; }
+        
+        .service-image { background: var(--bg-gray); border-radius: 30px; height: 400px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .service-image i { font-size: 10rem; color: var(--primary-blue); opacity: 0.1; position: absolute; }
+        .service-image .floating-ui { position: relative; z-index: 2; width: 80%; height: 70%; }
+
+        .service-text h2 { font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 25px; line-height: 1.2; }
+        .service-text p { font-size: 1.1rem; color: #555; margin-bottom: 30px; }
+        .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .feature-item { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text-dark); }
+        .feature-item i { color: #25d366; }
+
+        @media (max-width: 992px) {
+            .service-row { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .service-row:nth-child(even) { direction: ltr; }
+            .feature-list { grid-template-columns: 1fr; text-align: left; max-width: 400px; margin: 0 auto; }
+        }
     </style>
 </head>
 <body>
@@ -26,7 +47,6 @@
                     <span class="logo-text"><span class="highlight">R</span>evanta <span class="highlight">G</span>rowth <span class="highlight">M</span>edia</span>
                 </a>
             </div>
-            
             <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html" class="nav-btn">Home</a></li>
@@ -40,7 +60,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="services.html" class="nav-btn">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <a href="services.html" class="nav-btn active">Services <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="services.html#web-dev">Website Design & Development</a></li>
                             <li><a href="services.html#ecommerce">E-commerce Store Design & Dev</a></li>
@@ -55,7 +75,6 @@
                     <li><a href="contact.html" class="nav-btn">Contact</a></li>
                 </ul>
             </nav>
-            
             <div class="header-actions">
                 <a href="https://wa.me/918433206010" class="btn btn-whatsapp" target="_blank">
                     <i class="fa-brands fa-whatsapp"></i> Whatsapp Connect
@@ -65,60 +84,157 @@
         </div>
     </header>
 
-    <section class="inner-hero">
+    <section class="services-hero">
         <div class="container">
-            <h1>Our Digital Solutions</h1>
-            <p>High-converting services tailored for your business growth.</p>
+            <span class="badge" style="background: var(--white); color: var(--primary-blue); margin-bottom: 20px;">What We Offer</span>
+            <h1 style="font-size: 3.5rem;">Empowering Your Brand with <br> <span class="text-orange">Next-Gen Digital Solutions</span></h1>
+            <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">We blend creativity with technology to help your business grow in the digital era. Explore our comprehensive suite of services.</p>
         </div>
     </section>
 
-    <div id="web-dev" class="service-detail">
-        <div class="container text-center">
-            <i class="fa-solid fa-laptop-code"></i>
-            <h2>Website Design & Development</h2>
-            <p>Professional और responsive websites जो fast load होती हैं और conversion-focused होती हैं। हम आपके business के लिए state-of-the-art web solutions design करते हैं।</p>
+    <div class="service-nav">
+        <div class="container">
+            <div class="service-nav-links">
+                <a href="#web-dev">Web Dev</a>
+                <a href="#ecommerce">E-commerce</a>
+                <a href="#google-ads">Google Ads</a>
+                <a href="#meta-ads">Meta Ads</a>
+                <a href="#seo">SEO</a>
+                <a href="#smm">SMM</a>
+                <a href="#whatsapp">WhatsApp</a>
+                <a href="#crm">CRM</a>
+            </div>
         </div>
     </div>
 
-    <div id="ecommerce" class="service-detail">
-        <div class="container text-center">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <h2>E-commerce Store Design & Development</h2>
-            <p>Complete online store setup with payment integration, product management & cart system। अपने business को scale करने के लिए powerful e-commerce platform बनाएं।</p>
-        </div>
-    </div>
+    <section class="section">
+        <div class="container">
+            
+            <!-- Web Dev -->
+            <div id="web-dev" class="service-row">
+                <div class="service-image">
+                    <i class="fa-solid fa-code"></i>
+                    <div class="glass-browser floating-ui">
+                        <div class="browser-top"><span></span><span></span><span></span></div>
+                        <div class="browser-body">
+                            <div class="browser-hero" style="background: rgba(10,37,92,0.1);"></div>
+                            <div class="layout-grid">
+                                <div class="project-box" style="background: var(--white);"></div>
+                                <div class="project-box" style="background: var(--white);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-text">
+                    <h2>Website Design & <br>Development</h2>
+                    <p>We build high-performance, responsive websites that serve as your brand's digital headquarters. Our focus is on speed, user experience, and conversion optimization.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Custom UI/UX Design</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Mobile First Approach</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> SEO Optimized Code</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> 1-Year Support</div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary mt-50">Start Your Project</a>
+                </div>
+            </div>
 
-    <div id="google-ads" class="service-detail">
-        <div class="container text-center">
-            <i class="fa-brands fa-google"></i>
-            <h2>Google Ads</h2>
-            <p>High ROI campaigns जो targeted audience तक आपके product/service को पहुंचाते हैं। Search Ads से लेकर Display Ads तक, हम सब manage करते हैं।</p>
-        </div>
-    </div>
+            <!-- E-commerce -->
+            <div id="ecommerce" class="service-row">
+                <div class="service-image">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="glass-dashboard floating-ui">
+                        <div class="glass-header"><span></span><span></span><span></span></div>
+                        <div class="glass-content">
+                            <div class="stat-row"><div class="stat-bar" style="width: 90%;"></div></div>
+                            <div class="floating-icons" style="margin-top: 10px;"><i class="fa-solid fa-tag"></i><i class="fa-solid fa-credit-card"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-text">
+                    <h2>E-commerce Store <br>Development</h2>
+                    <p>Launch your online store with a powerful platform built for sales. We handle everything from payment integration to inventory management systems.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Shopify & WooCommerce</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Secure Payments</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Inventory Sync</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Sales Dashboard</div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary mt-50">Build My Store</a>
+                </div>
+            </div>
 
-    <div id="meta-ads" class="service-detail">
-        <div class="container text-center">
-            <i class="fa-brands fa-facebook"></i>
-            <h2>Meta Ads (Facebook & Instagram)</h2>
-            <p>Engaging creatives और high converting ads campaigns for maximum reach। सही audience को target करके अपनी sales बढ़ाएं।</p>
-        </div>
-    </div>
+            <!-- Google Ads -->
+            <div id="google-ads" class="service-row">
+                <div class="service-image">
+                    <i class="fa-brands fa-google"></i>
+                    <div class="glass-sphere floating-ui">
+                        <div class="core" style="background: #4285F4;"></div>
+                        <i class="fa-brands fa-google" style="opacity: 1; font-size: 3rem;"></i>
+                    </div>
+                </div>
+                <div class="service-text">
+                    <h2>Google Ads (PPC) <br>Management</h2>
+                    <p>Get found when it matters most. We create high-intent search campaigns that put your business at the top of Google search results.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Search & Display Ads</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> High-ROI Strategies</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Keyword Research</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Monthly Reporting</div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary mt-50">Get More Leads</a>
+                </div>
+            </div>
 
-    <div id="seo" class="service-detail">
-        <div class="container text-center">
-            <i class="fa-solid fa-magnifying-glass-chart"></i>
-            <h2>SEO (Search Engine Optimization)</h2>
-            <p>Google ranking improve करके organic traffic और leads increase करना। Keyword research से लेकर Backlink building तक।</p>
-        </div>
-    </div>
+            <!-- Meta Ads -->
+            <div id="meta-ads" class="service-row">
+                <div class="service-image">
+                    <i class="fa-brands fa-facebook"></i>
+                    <div class="glass-dashboard floating-ui">
+                        <div class="glass-content">
+                            <div class="stat-row"><div class="stat-bar" style="width: 85%; background: #1877F2;"></div></div>
+                            <div class="floating-icons"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-facebook"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-text">
+                    <h2>Meta Ads (FB & IG) <br>Campaigns</h2>
+                    <p>Stop the scroll and convert. Our creative Meta ad strategies target the right audience to build brand awareness and drive direct sales.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Target Audience Audit</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Ad Creative Design</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Retargeting Funnels</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Lead Generation</div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary mt-50">Start Advertising</a>
+                </div>
+            </div>
 
-    <div id="whatsapp" class="service-detail">
-        <div class="container text-center">
-            <i class="fa-brands fa-whatsapp"></i>
-            <h2>WhatsApp Marketing & CRM Integration</h2>
-            <p>Automation, bulk messaging, lead management & CRM system integration। अपने customers के साथ seamless connection बनाए रखें।</p>
+            <!-- SEO -->
+            <div id="seo" class="service-row">
+                <div class="service-image">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="glass-browser floating-ui">
+                        <div class="browser-body">
+                            <div class="stat-row"><div class="stat-bar" style="width: 98%; background: #34A853;"></div></div>
+                            <div style="font-size: 0.8rem; opacity: 0.6;">Ranking #1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-text">
+                    <h2>Search Engine <br>Optimization (SEO)</h2>
+                    <p>Rank higher, grow faster. Our technical and content-driven SEO strategies help you dominate search engine results without paying for ads.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> On-Page SEO</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Backlink Building</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Local SEO (GMB)</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Speed Optimization</div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary mt-50">Audit My Website</a>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </section>
 
     <footer class="footer">
         <div class="container">

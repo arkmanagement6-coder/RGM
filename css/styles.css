@@ -33,10 +33,11 @@ img { max-width: 100%; display: block; }
 .mt-50 { margin-top: 50px; }
 
 /* --- Buttons --- */
-.btn { display: inline-block; padding: 12px 30px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 1rem; }
-.btn-primary { background: linear-gradient(45deg, var(--secondary-red), #ff4d6d); color: var(--white); box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3); }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4); }
-.btn-secondary { background-color: var(--white); color: var(--primary-blue); }
+.btn { display: inline-block; padding: 14px 35px; border-radius: 50px; font-weight: 700; cursor: pointer; transition: var(--transition); border: 2px solid transparent; font-size: 1.05rem; }
+.btn-primary { background: var(--secondary-red); color: var(--white); border-color: var(--secondary-red); box-shadow: 0 10px 25px rgba(230, 57, 70, 0.4); }
+.btn-primary:hover { background: var(--white); color: var(--secondary-red); transform: translateY(-3px); }
+.btn-secondary { background: var(--white); color: var(--secondary-red); border-color: var(--white); box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2); }
+.btn-secondary:hover { background: transparent; color: var(--white); transform: translateY(-3px); }
 .btn-outline { border: 2px solid var(--primary-blue); color: var(--primary-blue); background: transparent; }
 .btn-whatsapp { background-color: #25d366; color: var(--white); display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
 .btn-whatsapp:hover { background-color: #128c7e; transform: translateY(-3px); }
@@ -178,6 +179,30 @@ img { max-width: 100%; display: block; }
     gap: 40px;
     align-items: center;
     padding-top: 80px;
+    width: 100%;
+}
+
+.slide-left {
+    color: var(--white);
+    text-align: left;
+    max-width: 800px;
+}
+
+.slide-left h1 { 
+    font-size: 5.5rem; 
+    line-height: 1; 
+    margin: 25px 0; 
+    font-weight: 900;
+    text-transform: capitalize;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.slide-left p { 
+    font-size: 1.5rem; 
+    margin-bottom: 50px; 
+    font-weight: 500;
+    line-height: 1.5;
+    opacity: 0.9;
 }
 
 .slide.active .slide-left {

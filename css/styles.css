@@ -216,25 +216,33 @@ img { max-width: 100%; display: block; }
 
 /* --- Hero Slider Responsive --- */
 @media (max-width: 768px) {
-    .hero-slider { min-height: 100vh; padding: 100px 0 50px; display: flex; align-items: center; }
-    .slide-grid { grid-template-columns: 1fr !important; gap: 30px; text-align: center; }
-    .slide-left { order: 2; padding: 0 10px; }
-    .slide-left h1 { font-size: 2.2rem !important; line-height: 1.2; margin-bottom: 15px; }
-    .slide-left p { font-size: 0.95rem !important; line-height: 1.5; }
-    .hero-btns { justify-content: center; flex-direction: column; gap: 10px; }
-    .btn { width: 100%; text-align: center; }
+    .hero-slider { min-height: 100vh; padding: 140px 0 80px; display: flex; align-items: center; }
+    .slide-grid { grid-template-columns: 1fr !important; gap: 20px; text-align: center; }
     
-    .slide-right { order: 1; transform: scale(0.7); margin-bottom: 0; height: 300px; display: flex; justify-content: center; align-items: center; }
-    .glass-dashboard, .glass-browser, .glass-sphere { position: relative; left: auto !important; right: auto !important; top: auto !important; margin: 0 auto; }
+    .slide-left { order: 2; z-index: 5; position: relative; }
+    .slide-left .badge { display: inline-block; position: static; margin-bottom: 15px; font-size: 0.75rem; padding: 8px 15px; }
+    .slide-left h1 { font-size: 2rem !important; line-height: 1.2; margin-bottom: 15px; font-weight: 800; }
+    .slide-left p { font-size: 0.95rem !important; line-height: 1.6; opacity: 0.9; margin-bottom: 25px; padding: 0 10px; }
     
-    .slider-arrow { width: 40px; height: 40px; font-size: 1rem; }
-    .slider-dots { bottom: 20px; }
+    .hero-btns { display: flex; flex-direction: column; gap: 12px; align-items: center; width: 100%; max-width: 300px; margin: 0 auto; }
+    .hero-btns .btn { width: 100%; margin: 0 !important; padding: 14px 20px; font-size: 0.9rem; }
+    
+    .slide-right { order: 1; position: absolute; top: 15%; left: 50%; transform: translateX(-50%) scale(0.5); opacity: 0.3; z-index: 1; pointer-events: none; height: 200px; overflow: hidden; }
+    .glass-dashboard, .glass-browser, .glass-sphere { margin: 0 auto; }
+    
+    .slider-arrow { width: 35px; height: 35px; background: rgba(255,255,255,0.2); font-size: 0.8rem; top: 50%; transform: translateY(-50%); }
+    .slider-arrow.prev { left: 10px; }
+    .slider-arrow.next { right: 10px; }
+    
+    .slider-dots { bottom: 15px; }
+    .dot { width: 8px; height: 8px; }
+    .dot.active { width: 25px; }
 }
 
 @media (max-width: 480px) {
-    .slide-left h1 { font-size: 1.8rem !important; }
-    .header-container { padding: 10px 15px; }
-    .logo-text { font-size: 1.2rem; }
+    .hero-slider { padding-top: 120px; }
+    .slide-left h1 { font-size: 1.7rem !important; }
+    .header-container { padding: 12px 15px; }
 }
 
 /* --- Content Sections Responsive --- */

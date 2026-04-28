@@ -211,7 +211,9 @@ img { max-width: 100%; display: block; }
     
     .nav-btn { color: var(--text-dark) !important; font-size: 1.1rem; padding: 10px 0; border-bottom: 1px solid #eee; width: 100%; display: flex; justify-content: space-between; align-items: center; }
     
-    .header-actions { display: none; }
+    .header-actions .btn-whatsapp { display: none; }
+    .mobile-toggle { display: block !important; color: var(--white); font-size: 1.8rem; }
+    .header.scrolled .mobile-toggle { color: var(--text-dark); }
 }
 
 /* --- Hero Slider Responsive --- */

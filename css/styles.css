@@ -156,14 +156,17 @@ img { max-width: 100%; display: block; }
     display: block;
     padding: 12px 25px;
     color: var(--text-dark);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
 }
 
 .dropdown-menu li a:hover {
-    background-color: var(--bg-gray);
-    color: var(--secondary-red);
-    padding-left: 30px;
+    background-color: var(--secondary-red);
+    color: var(--white);
+    padding-left: 35px;
+    border-left-color: var(--orange);
 }
 
 .mobile-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: var(--primary-blue); }

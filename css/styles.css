@@ -189,12 +189,12 @@ img { max-width: 100%; display: block; }
 }
 
 .slide-left h1 { 
-    font-size: 5.5rem; 
-    line-height: 1; 
-    margin: 25px 0; 
-    font-weight: 900;
+    font-size: 3.8rem; /* Reasonable premium size */
+    line-height: 1.1; 
+    margin: 20px 0; 
+    font-weight: 800;
     text-transform: capitalize;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .slide-left p { 

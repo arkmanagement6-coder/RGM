@@ -167,7 +167,21 @@ img {
 
 .logo {
     font-size: 1.8rem;
+    color: var(--white); /* Bright logo for dark hero */
+    font-weight: 800;
+}
+
+.logo span {
+    color: #ff4d6d; /* Brighter red */
+}
+
+.header.scrolled .logo {
     color: var(--primary-blue);
+}
+
+.nav-menu {
+    margin-left: auto; /* Pushes nav and buttons to the right */
+    margin-right: 40px;
 }
 
 .nav-menu ul {
@@ -177,10 +191,20 @@ img {
 
 .nav-menu ul li a {
     font-weight: 500;
+    color: rgba(255, 255, 255, 0.9); /* Light text for transparency */
     position: relative;
 }
 
+.header.scrolled .nav-menu ul li a {
+    color: var(--text-dark);
+}
+
 .nav-menu ul li a:hover, .nav-menu ul li a.active {
+    color: var(--white);
+    text-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+}
+
+.header.scrolled .nav-menu ul li a:hover, .header.scrolled .nav-menu ul li a.active {
     color: var(--secondary-red);
 }
 
@@ -188,6 +212,18 @@ img {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-left: 10px; /* Slight buffer from nav */
+}
+
+.header.scrolled .btn-outline {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+/* Ensure buttons in header are always visible and distinct */
+.header .btn-outline {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--white);
 }
 
 .mobile-toggle {
@@ -219,12 +255,14 @@ img {
     display: flex;
     align-items: center;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    visibility: hidden; /* Hide non-active slides completely */
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
     z-index: 1;
 }
 
 .slide.active {
     opacity: 1;
+    visibility: visible;
     z-index: 2;
 }
 

@@ -175,7 +175,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 992px) {
     .header-container { padding: 15px var(--mobile-padding); }
     
-    .mobile-toggle { display: block; cursor: pointer; z-index: 1001; }
+    .mobile-toggle { display: block; cursor: pointer; z-index: 10001; }
     
     .nav-menu {
         position: fixed;
@@ -185,12 +185,28 @@ img { max-width: 100%; display: block; }
         max-width: 320px;
         height: 100vh;
         background: var(--white);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        box-shadow: -15px 0 40px rgba(0,0,0,0.2);
         padding: 100px 30px;
         transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-        z-index: 1000;
+        z-index: 10000;
         overflow-y: auto;
     }
+
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(5px);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s;
+        z-index: 9999;
+    }
+
+    .nav-overlay.active { opacity: 1; visibility: visible; }
 
     .nav-menu.active { right: 0; }
 

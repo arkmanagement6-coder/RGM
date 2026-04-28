@@ -77,13 +77,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-btn');
+    
+    // Create overlay if not exists
+    let overlay = document.querySelector('.nav-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.classList.add('nav-overlay');
+        document.body.appendChild(overlay);
+    }
 
-    mobileToggle.addEventListener('click', () => {
+    function toggleMenu() {
         navMenu.classList.toggle('active');
-        mobileToggle.querySelector('i').classList.toggle('fa-bars');
-        mobileToggle.querySelector('i').classList.toggle('fa-xmark');
+        overlay.classList.toggle('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
         document.body.classList.toggle('no-scroll');
-    });
+    }
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMenu);
+    }
+    
+    if (overlay) {
+        overlay.addEventListener('click', toggleMenu);
+    }
 
     // Close menu when clicking links
     navLinks.forEach(link => {
@@ -93,8 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.parentElement.classList.toggle('active');
             } else if (window.innerWidth <= 992) {
                 navMenu.classList.remove('active');
-                mobileToggle.querySelector('i').classList.add('fa-bars');
-                mobileToggle.querySelector('i').classList.remove('fa-xmark');
+                overlay.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-xmark');
+                }
                 document.body.classList.remove('no-scroll');
             }
         });

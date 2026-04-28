@@ -242,6 +242,13 @@ img { max-width: 100%; display: block; }
     
     .dropdown.active .dropdown-menu { display: block; }
     
+    .nav-btn.active {
+        color: var(--secondary-red) !important;
+        background: transparent !important;
+        font-weight: 700;
+        border-bottom: 2px solid var(--secondary-red) !important;
+    }
+
     .nav-btn { 
         color: var(--text-dark) !important; 
         font-size: 1.1rem; 
@@ -256,11 +263,6 @@ img { max-width: 100%; display: block; }
         border-radius: 0 !important;
         box-shadow: none !important;
         transform: none !important;
-    }
-    
-    .nav-btn.active {
-        color: var(--secondary-red) !important;
-        font-weight: 700;
     }
 
     .dropdown.active > .nav-btn {

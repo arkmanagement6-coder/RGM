@@ -14,10 +14,12 @@
     --bg-light: #ffffff;
     --bg-gray: #f4f7f6;
     --white: #ffffff;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --mobile-padding: 20px;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+body.no-scroll { overflow: hidden; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-light); overflow-x: hidden; }
@@ -167,6 +169,77 @@ img { max-width: 100%; display: block; }
     color: var(--white);
     padding-left: 35px;
     border-left-color: var(--orange);
+}
+
+/* --- Navigation Responsive --- */
+@media (max-width: 992px) {
+    .header-container { padding: 15px var(--mobile-padding); }
+    
+    .mobile-toggle { display: block; cursor: pointer; z-index: 1001; }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        padding: 100px 30px;
+        transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .nav-menu.active { right: 0; }
+
+    .nav-menu ul { flex-direction: column; gap: 15px; }
+    .nav-menu ul li { width: 100%; }
+    
+    .dropdown-menu { 
+        position: static; 
+        opacity: 1; 
+        visibility: visible; 
+        box-shadow: none; 
+        display: none; 
+        padding: 10px 0 10px 20px; 
+        border-top: none;
+    }
+    
+    .dropdown.active .dropdown-menu { display: block; }
+    
+    .nav-btn { color: var(--text-dark) !important; font-size: 1.1rem; padding: 10px 0; border-bottom: 1px solid #eee; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+    
+    .header-actions { display: none; }
+}
+
+/* --- Hero Slider Responsive --- */
+@media (max-width: 768px) {
+    .hero-slider { height: auto; padding: 120px 0 60px; }
+    .slide-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .slide-left h1 { font-size: 2.2rem; }
+    .hero-btns { justify-content: center; flex-direction: column; }
+    .btn { width: 100%; }
+    
+    .slide-right { order: -1; margin-bottom: 20px; transform: scale(0.85); }
+    .glass-dashboard, .glass-browser, .glass-sphere { margin: 0 auto; width: 100%; max-width: 350px; }
+}
+
+/* --- Content Sections Responsive --- */
+@media (max-width: 992px) {
+    .grid-3 { grid-template-columns: 1fr; gap: 30px; }
+    .grid-2 { grid-template-columns: 1fr !important; gap: 50px; }
+    
+    .about-modern-grid { grid-template-columns: 1fr !important; text-align: center; }
+    .about-image-stack { padding-right: 0 !important; margin-bottom: 50px; }
+    .about-image-stack img { height: 450px !important; }
+}
+
+@media (max-width: 480px) {
+    .section { padding: 60px 0; }
+    h2 { font-size: 1.8rem !important; }
+    .badge { font-size: 0.7rem; }
 }
 
 .mobile-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: var(--primary-blue); }

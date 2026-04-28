@@ -338,19 +338,42 @@ img { max-width: 100%; display: block; }
 .icon-wrapper { width: 70px; height: 70px; background: #f0f4ff; color: var(--primary-blue); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 25px; }
 .link-more { color: var(--secondary-red); font-weight: 600; font-size: 0.9rem; margin-top: 15px; display: inline-block; }
 
-/* --- CTA Banner --- */
-.cta-banner { background: var(--primary-blue); color: var(--white); padding: 80px 0; }
-.cta-actions { display: flex; justify-content: center; gap: 20px; margin-top: 35px; }
+/* --- Process Steps --- */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 50px; position: relative; }
+.process-step { text-align: center; position: relative; z-index: 2; }
+.step-number { width: 60px; height: 60px; background: var(--secondary-red); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px; box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3); }
+.process-step h4 { margin-bottom: 15px; color: var(--primary-blue); }
 
-/* --- Footer --- */
-.footer { background: #051433; color: var(--white); padding: 80px 0 20px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; }
-.footer-col h4 { margin-bottom: 25px; }
-.footer-col ul li { margin-bottom: 12px; }
-.footer-col ul li a:hover { color: var(--secondary-red); padding-left: 5px; }
-.social-links { display: flex; gap: 15px; margin-top: 25px; }
-.social-links a { width: 38px; height: 38px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; padding-top: 20px; text-align: center; opacity: 0.6; font-size: 0.9rem; }
+/* --- Stats Section --- */
+.stats-section { background: linear-gradient(135deg, var(--primary-blue), #1a3a8a); padding: 80px 0; color: var(--white); }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+.stat-item h2 { font-size: 3.5rem; color: var(--orange); margin-bottom: 5px; }
+.stat-item p { font-weight: 600; opacity: 0.8; text-transform: uppercase; font-size: 0.9rem; }
+
+/* --- Testimonials --- */
+.testimonial-card { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: var(--shadow); position: relative; }
+.testimonial-card i { font-size: 2rem; color: var(--orange); opacity: 0.3; position: absolute; top: 20px; right: 20px; }
+.client-info { display: flex; align-items: center; gap: 15px; margin-top: 25px; }
+.client-img { width: 50px; height: 50px; border-radius: 50%; background: var(--bg-gray); }
+
+/* --- Scroll Reveal --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- Footer Refinement --- */
+.footer .logo-text { color: var(--white); font-size: 1.5rem; margin-bottom: 20px; display: inline-block; }
+.footer-col h4 { border-bottom: 2px solid var(--secondary-red); display: inline-block; padding-bottom: 5px; margin-bottom: 30px; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links li a { opacity: 0.7; transition: var(--transition); }
+.footer-links li a:hover { opacity: 1; color: var(--orange); padding-left: 8px; }
+
+@media (max-width: 992px) {
+    .process-grid, .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 500px) {
+    .process-grid, .stats-grid { grid-template-columns: 1fr; }
+}
 
 /* --- Floating WhatsApp --- */
 .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; z-index: 999; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }

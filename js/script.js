@@ -9,13 +9,25 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
+        } else if (!window.location.pathname.includes('index.html') && window.location.pathname !== '/' && window.location.pathname !== '/RGM/') {
+            // Keep scrolled on inner pages if not home
+            header.classList.add('scrolled');
         } else {
-            // Only remove scrolled if we're on the homepage (since inner pages are always scrolled)
-            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
-                header.classList.remove('scrolled');
-            }
+            header.classList.remove('scrolled');
         }
     });
+
+    // --- Scroll Reveal Animation ---
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealOnScroll.observe(el));
 
     // --- Hero Slider Logic (Only if on Home) ---
     const slides = document.querySelectorAll('.slide');

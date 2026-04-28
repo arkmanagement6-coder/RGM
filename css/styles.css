@@ -1181,8 +1181,10 @@ img { max-width: 100%; display: block; }
     
     .ad-urgency-bar p { display: flex; flex-direction: column; gap: 5px; font-size: 0.85rem; padding: 5px 0; }
     
-    header .btn-whatsapp { font-size: 0.8rem; padding: 8px 12px; }
-    header .logo-text { font-size: 1.2rem; }
+    header .btn-whatsapp { font-size: 0.8rem; padding: 6px 10px; border-radius: 8px; white-space: nowrap; }
+    header .logo-text { font-size: 1.1rem; white-space: nowrap; letter-spacing: -0.5px; }
+    .hide-mobile { display: none !important; }
+    .show-mobile { display: inline-block !important; }
     
     .ad-short-cta h2 { font-size: 1.8rem; }
     .ad-short-cta p { font-size: 1rem; }

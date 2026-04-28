@@ -39,20 +39,25 @@ img { max-width: 100%; display: block; }
 .btn-whatsapp { background-color: #25d366; color: var(--white); display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
 .btn-whatsapp:hover { background-color: #128c7e; transform: translateY(-3px); }
 
-/* --- Logo Image --- */
-.logo { 
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    height: 70px; /* Adjust based on logo proportions */
-    width: auto;
+/* --- Text-based Logo --- */
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--white);
     transition: var(--transition);
 }
 
-.header.scrolled .logo-img {
-    height: 60px; /* Slightly smaller on scroll */
+.logo-text .highlight {
+    color: #ff8c00; /* Distinct Orange */
+}
+
+.header.scrolled .logo-text {
+    color: var(--primary-blue); /* Fallback to blue for readability on white bg */
+}
+
+.header.scrolled .logo-text .highlight {
+    color: #ff8c00;
 }
 
 /* --- Header & Nav --- */

@@ -573,6 +573,10 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
+    .grid-3, .grid-2, .grid-4 { grid-template-columns: 1fr !important; gap: 30px; }
+    .section { padding: 60px 0; }
+    .section-header h2 { font-size: 2rem; }
+    
     .footer { text-align: left !important; }
     .footer-grid { grid-template-columns: 1fr !important; gap: 35px !important; }
     .footer-col { text-align: left !important; }

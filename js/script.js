@@ -77,18 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-btn');
-    
-    // Create overlay if not exists
-    let overlay = document.querySelector('.nav-overlay');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.classList.add('nav-overlay');
-        document.body.appendChild(overlay);
-    }
 
     function toggleMenu() {
         navMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
         const icon = mobileToggle.querySelector('i');
         if (icon) {
             icon.classList.toggle('fa-bars');
@@ -100,10 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileToggle) {
         mobileToggle.addEventListener('click', toggleMenu);
     }
-    
-    if (overlay) {
-        overlay.addEventListener('click', toggleMenu);
-    }
 
     // Close menu when clicking links
     navLinks.forEach(link => {
@@ -113,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             } else if (window.innerWidth <= 992) {
                 navMenu.classList.remove('active');
-                overlay.classList.remove('active');
                 const icon = mobileToggle.querySelector('i');
                 if (icon) {
                     icon.classList.add('fa-bars');

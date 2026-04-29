@@ -87,7 +87,7 @@ window.handleGlobalPaymentSubmit = async (e) => {
             description: "Custom Payment",
             order_id: data.order.id,
             handler: function (response) {
-                window.location.href = `payment-success.html?payment_id=${response.razorpay_payment_id}&order_id=${response.razorpay_order_id}`;
+                window.location.href = `payment-success.html?payment_id=${response.razorpay_payment_id}&order_id=${response.razorpay_order_id}&amount=${amount}`;
             },
             prefill: {
                 name: name,

@@ -14,9 +14,11 @@ module.exports = async (req, res) => {
   });
 
   try {
-    // We are hardcoding the amount to 5000 INR as requested for the E-commerce website package.
+    // Get amount from request body, or default to 5000 if not provided
+    const amountFromRequest = req.body.amount || 5000;
+    
     const options = {
-      amount: 5000 * 100, // amount in smallest currency unit (paise for INR)
+      amount: amountFromRequest * 100, // amount in smallest currency unit (paise)
       currency: "INR",
       receipt: `rcptid_${Math.floor(Math.random() * 100000)}`
     };
@@ -26,7 +28,7 @@ module.exports = async (req, res) => {
     res.status(200).json({
       success: true,
       order: order,
-      key_id: process.env.RAZORPAY_KEY_ID || 'rzp_live_SjF2ykfo6N8E6m' // We send the key_id to the frontend to initialize the widget
+      key_id: process.env.RAZORPAY_KEY_ID || 'rzp_live_SjF2ykfo6N8E6m'
     });
   } catch (error) {
     console.error("Error creating Razorpay order:", error);

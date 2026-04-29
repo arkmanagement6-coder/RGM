@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -42,8 +42,7 @@
                         <span class="highlight">M</span>edia</span>
                 </a>
             </div>
-            <button onclick="openPaymentModal()" class="btn ad-btn-primary ad-cta-btn"
-                style="background:#22c55e; border:none; cursor:pointer;">Buy Now - ₹5000</button>
+            <button onclick="openGlobalPaymentModal()" class="btn ad-btn-primary ad-cta-btn" style="background:#22c55e; border:none; cursor:pointer;">Pay Now</button>
         </div>
     </header>
 
@@ -65,8 +64,7 @@
                     India. No technical knowledge required — we handle everything for you.</p>
 
                 <div class="ad-cta-group">
-                    <button onclick="openPaymentModal()" class="btn ad-btn-primary"
-                        style="border:none; cursor:pointer;">👉 Get Your Store Now</button>
+                    <button onclick="openGlobalPaymentModal()" class="btn ad-btn-primary" style="border:none; cursor:pointer;">👉 Get Your Store Now</button>
                     <a href="https://wa.me/918821885577?text=Hi%2C%20I%20would%20like%20a%20Free%20Consultation%20about%20the%20Ecommerce%20Website."
                         class="btn ad-btn-secondary" target="_blank">👉 Book Free Consultation</a>
                 </div>
@@ -135,7 +133,7 @@
             </div>
 
             <div class="text-center" style="margin-top: 50px;">
-                <button onclick="openPaymentModal()" class="btn ad-btn-primary"
+                <button onclick="openGlobalPaymentModal()" class="btn ad-btn-primary"
                     style="border:none; cursor:pointer; padding: 15px 40px; font-size: 1.2rem;">👉 Start Selling
                     Today</button>
             </div>
@@ -147,7 +145,7 @@
         <div class="container text-center">
             <h2>Start Your E-commerce Website @ ₹5000/-</h2>
             <p>Sell your products online with a professional store. Fast | Affordable | Ready to Launch</p>
-            <button onclick="openPaymentModal()" class="btn ad-btn-action" style="border:none; cursor:pointer;">👉 Get
+            <button onclick="openGlobalPaymentModal()" class="btn ad-btn-action" style="border:none; cursor:pointer;">👉 Get
                 Started Now</button>
         </div>
     </section>
@@ -198,114 +196,7 @@
         </div>
     </footer>
 
-    <!-- Payment Modal -->
-    <div id="paymentModal" class="payment-modal-overlay">
-        <div class="payment-modal-card">
-            <button class="close-modal" onclick="closePaymentModal()"><i class="fa-solid fa-xmark"></i></button>
-            <h3>Complete Your Order</h3>
-            <p style="margin-bottom: 20px; color: var(--light-gray);">E-commerce Website - <strong>₹5000</strong></p>
-
-            <form id="paymentForm" onsubmit="handlePaymentSubmit(event)">
-                <div class="input-group">
-                    <label>Full Name</label>
-                    <input type="text" id="custName" required placeholder="John Doe">
-                </div>
-                <div class="input-group">
-                    <label>Email Address</label>
-                    <input type="email" id="custEmail" required placeholder="john@example.com">
-                </div>
-                <div class="input-group">
-                    <label>Phone Number</label>
-                    <input type="tel" id="custPhone" required placeholder="9876543210" pattern="[0-9]{10}">
-                </div>
-                <button type="submit" id="payBtn" class="btn ad-btn-primary"
-                    style="width: 100%; border:none; cursor:pointer; margin-top: 10px;">
-                    Pay ₹5000 Now
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Razorpay & Custom Script -->
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script>
-        function openPaymentModal() {
-            document.getElementById('paymentModal').style.display = 'flex';
-        }
-
-        function closePaymentModal() {
-            document.getElementById('paymentModal').style.display = 'none';
-        }
-
-        async function handlePaymentSubmit(e) {
-            e.preventDefault();
-
-            const btn = document.getElementById('payBtn');
-            const originalText = btn.innerText;
-            btn.innerText = "Processing...";
-            btn.disabled = true;
-
-            const name = document.getElementById('custName').value;
-            const email = document.getElementById('custEmail').value;
-            const phone = document.getElementById('custPhone').value;
-
-            try {
-                // Call our Vercel Serverless Function to create the order
-                const response = await fetch('/api/create-order', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, phone })
-                });
-
-                const data = await response.json();
-
-                if (!data.success) {
-                    alert("Failed to initialize payment. Please try again.");
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    return;
-                }
-
-                // Initialize Razorpay Checkout
-                const options = {
-                    key: data.key_id, // Sent from backend safely
-                    amount: data.order.amount,
-                    currency: data.order.currency,
-                    name: "Revanta Growth Media",
-                    description: "E-commerce Website Setup",
-                    order_id: data.order.id,
-                    handler: function (response) {
-                        // Redirect to success page on successful payment
-                        window.location.href = `payment-success.html?payment_id=${response.razorpay_payment_id}&order_id=${response.razorpay_order_id}`;
-                    },
-                    prefill: {
-                        name: name,
-                        email: email,
-                        contact: phone
-                    },
-                    theme: {
-                        color: "#0a255c"
-                    }
-                };
-
-                const rzp = new Razorpay(options);
-
-                rzp.on('payment.failed', function (response) {
-                    alert("Payment Failed. Reason: " + response.error.description);
-                });
-
-                rzp.open();
-                closePaymentModal(); // close our modal when Razorpay opens
-
-            } catch (error) {
-                console.error(error);
-                alert("An error occurred. Please try again.");
-            } finally {
-                btn.innerText = originalText;
-                btn.disabled = false;
-            }
-        }
-    </script>
+    <!-- Scripts handled by js/payment.js -->
     <script src="js/script.js"></script>
 <script src="js/payment.js"></script>
 </body>

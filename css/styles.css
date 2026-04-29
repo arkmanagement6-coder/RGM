@@ -177,6 +177,11 @@ img { max-width: 100%; display: block; }
     
     .mobile-toggle { display: block; cursor: pointer; z-index: 10001; }
     
+    /* Fix overlapping header on mobile */
+    .logo-text { font-size: 1.1rem !important; }
+    .ad-cta-btn { padding: 8px 15px !important; font-size: 0.9rem !important; min-width: auto !important; }
+    .header .container { gap: 10px; }
+    
     .nav-menu {
         position: absolute;
         top: 100%;

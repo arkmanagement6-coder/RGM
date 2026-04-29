@@ -1,20 +1,19 @@
-$oldEmail = "info@revantagrowthmedia.com"
-$newEmail = "revantagrowthmedia@gmail.com"
-$oldPhone = "8433206010"
-$newPhone = "7668569852"
+$phonesToReplace = @("7668569852", "8433206010")
+$newPhone = "8821885577"
 
 $files = Get-ChildItem -Path . -Filter *.html
 
 foreach ($file in $files) {
-    $content = Get-Content $file.FullName -Raw
-
+    # Read with UTF8 to preserve emojis/icons
+    $content = [System.IO.File]::ReadAllText($file.FullName, [System.Text.Encoding]::UTF8)
     $originalContent = $content
 
-    $content = $content -replace $oldEmail, $newEmail
-    $content = $content -replace $oldPhone, $newPhone
+    foreach ($oldPhone in $phonesToReplace) {
+        $content = $content.Replace($oldPhone, $newPhone)
+    }
 
     if ($originalContent -ne $content) {
-        Set-Content -Path $file.FullName -Value $content -Encoding UTF8
-        Write-Host "Updated $($file.Name)"
+        [System.IO.File]::WriteAllText($file.FullName, $content, [System.Text.Encoding]::UTF8)
+        Write-Host "Updated phone in $($file.Name)"
     }
 }

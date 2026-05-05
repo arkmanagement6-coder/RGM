@@ -212,6 +212,7 @@ nav {
     font-weight: 800;
     font-size: 1.5rem;
     color: var(--primary);
+    white-space: nowrap;
 }
 
 .nav-links {
@@ -430,13 +431,17 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-links, .nav-btns .btn {
-        display: none;
+        display: none !important;
     }
-    
+
     .mobile-toggle {
-        display: block;
+        display: block !important;
+    }
+
+    .logo {
+        font-size: 1.2rem;
     }
 
     .hero-text h1 {
@@ -475,6 +480,7 @@ footer {
     .main-content {
         margin-left: 0 !important;
         padding: 1rem;
+        padding-bottom: 5rem; /* Space for bottom nav */
     }
     .top-bar {
         flex-direction: column;

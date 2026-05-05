@@ -102,6 +102,14 @@ button, .btn {
     -webkit-text-fill-color: transparent;
 }
 
+/* Grid Utilities */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+
+.text-center { text-align: center; }
+
 /* Buttons */
 .btn-primary {
     background-color: var(--primary);
@@ -427,21 +435,22 @@ footer {
     }
 
     .stat-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
     }
 }
 
 @media (max-width: 1024px) {
-    .nav-links, .nav-btns .btn {
+    .nav-links, .nav-btns .btn:not(.mobile-toggle) {
         display: none !important;
     }
 
     .mobile-toggle {
-        display: block !important;
+        display: flex !important;
     }
 
     .logo {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .hero-text h1 {
@@ -452,13 +461,15 @@ footer {
         font-size: 1.8rem;
     }
 
-    .grid-3, .grid-4 {
+    /* Stack grids vertically on mobile */
+    .grid-2, .grid-3, .grid-4, .grid-5, .footer-grid {
         grid-template-columns: 1fr !important;
+        gap: 2rem !important;
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    /* Fix stats section specifically if using inline styles */
+    section div[style*="display: grid; grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: 1fr !important;
     }
 
     /* Marketplace specific */

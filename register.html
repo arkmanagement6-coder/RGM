@@ -149,14 +149,170 @@
                             <label>Address Line 2</label>
                             <input type="text" class="form-control" placeholder="Area/Landmark">
                         </div>
+                        <!-- Location Details -->
+                        <div class="form-group">
+                            <label>Country *</label>
+                            <select class="form-control" id="country" required>
+                                <option value="India" selected>India</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                                <option value="UAE">UAE</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                             <div class="form-group">
-                                <label>City *</label>
-                                <input type="text" class="form-control" placeholder="City" required>
+                                <label>State *</label>
+                                <select class="form-control" id="state" required>
+                                    <option value="" disabled selected>Select State</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                    <option value="Ladakh">Ladakh</option>
+                                    <option value="Lakshadweep">Lakshadweep</option>
+                                    <option value="Puducherry">Puducherry</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label>State *</label>
-                                <input type="text" class="form-control" placeholder="State" required>
+                                <label>City *</label>
+                                <input type="text" class="form-control" list="city-list" id="city" placeholder="Type or select city" required>
+                                <datalist id="city-list">
+                                    <option value="Mumbai">
+                                    <option value="Delhi">
+                                    <option value="Bangalore">
+                                    <option value="Hyderabad">
+                                    <option value="Ahmedabad">
+                                    <option value="Chennai">
+                                    <option value="Kolkata">
+                                    <option value="Surat">
+                                    <option value="Pune">
+                                    <option value="Jaipur">
+                                    <option value="Lucknow">
+                                    <option value="Kanpur">
+                                    <option value="Nagpur">
+                                    <option value="Indore">
+                                    <option value="Thane">
+                                    <option value="Bhopal">
+                                    <option value="Visakhapatnam">
+                                    <option value="Pimpri-Chinchwad">
+                                    <option value="Patna">
+                                    <option value="Vadodara">
+                                    <option value="Ghaziabad">
+                                    <option value="Ludhiana">
+                                    <option value="Agra">
+                                    <option value="Nashik">
+                                    <option value="Faridabad">
+                                    <option value="Meerut">
+                                    <option value="Rajkot">
+                                    <option value="Kalyan-Dombivli">
+                                    <option value="Vasai-Virar">
+                                    <option value="Varanasi">
+                                    <option value="Srinagar">
+                                    <option value="Aurangabad">
+                                    <option value="Dhanbad">
+                                    <option value="Amritsar">
+                                    <option value="Navi Mumbai">
+                                    <option value="Allahabad">
+                                    <option value="Ranchi">
+                                    <option value="Howrah">
+                                    <option value="Coimbatore">
+                                    <option value="Jabalpur">
+                                    <option value="Gwalior">
+                                    <option value="Vijayawada">
+                                    <option value="Jodhpur">
+                                    <option value="Madurai">
+                                    <option value="Raipur">
+                                    <option value="Kota">
+                                    <option value="Chandigarh">
+                                    <option value="Guwahati">
+                                    <option value="Solapur">
+                                    <option value="Hubli-Dharwad">
+                                    <option value="Mysore">
+                                    <option value="Tiruchirappalli">
+                                    <option value="Bareilly">
+                                    <option value="Aligarh">
+                                    <option value="Tiruppur">
+                                    <option value="Gurgaon">
+                                    <option value="Moradabad">
+                                    <option value="Jalandhar">
+                                    <option value="Bhubaneswar">
+                                    <option value="Salem">
+                                    <option value="Warangal">
+                                    <option value="Guntur">
+                                    <option value="Bhiwandi">
+                                    <option value="Saharanpur">
+                                    <option value="Gorakhpur">
+                                    <option value="Bikaner">
+                                    <option value="Amravati">
+                                    <option value="Noida">
+                                    <option value="Jamshedpur">
+                                    <option value="Bhilai">
+                                    <option value="Cuttack">
+                                    <option value="Firozabad">
+                                    <option value="Kochi">
+                                    <option value="Nellore">
+                                    <option value="Bhavnagar">
+                                    <option value="Dehradun">
+                                    <option value="Durgapur">
+                                    <option value="Asansol">
+                                    <option value="Rourkela">
+                                    <option value="Nanded">
+                                    <option value="Kolhapur">
+                                    <option value="Ajmer">
+                                    <option value="Akola">
+                                    <option value="Gulbarga">
+                                    <option value="Jamnagar">
+                                    <option value="Ujjain">
+                                    <option value="Loni">
+                                    <option value="Siliguri">
+                                    <option value="Jhansi">
+                                    <option value="Ulhasnagar">
+                                    <option value="Jammu">
+                                    <option value="Sangli-Miraj & Kupwad">
+                                    <option value="Mangalore">
+                                    <option value="Erode">
+                                    <option value="Belgaum">
+                                    <option value="Ambattur">
+                                    <option value="Tirunelveli">
+                                    <option value="Malegaon">
+                                    <option value="Gaya">
+                                    <option value="Jalgaon">
+                                    <option value="Udaipur">
+                                    <option value="Maheshtala">
+                                </datalist>
                             </div>
                         </div>
                         <div class="form-group">

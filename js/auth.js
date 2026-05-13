@@ -50,34 +50,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const categorySelect = document.getElementById('business-category');
     const otherCategoryGroup = document.getElementById('other-category-group');
     const influencerServices = document.getElementById('influencer-services');
+    const standardServices = document.getElementById('standard-services');
+
+    function toggleCategoryServices() {
+        if (!categorySelect) return;
+        
+        const selectedValue = categorySelect.value;
+        const selectedOption = categorySelect.options[categorySelect.selectedIndex];
+        const optGroup = selectedOption ? selectedOption.parentNode : null;
+        const isInfluencer = optGroup && optGroup.tagName === 'OPTGROUP' && optGroup.label === 'Influencer & Creator';
+
+        // Show/Hide "Other" input
+        if (otherCategoryGroup) {
+            if (selectedValue === 'Other') {
+                otherCategoryGroup.style.display = 'block';
+                document.getElementById('other-category').setAttribute('required', 'required');
+            } else {
+                otherCategoryGroup.style.display = 'none';
+                document.getElementById('other-category').removeAttribute('required');
+            }
+        }
+
+        // Switch between Standard and Influencer Services
+        if (influencerServices && standardServices) {
+            if (isInfluencer) {
+                influencerServices.style.display = 'block';
+                standardServices.style.display = 'none';
+            } else {
+                influencerServices.style.display = 'none';
+                standardServices.style.display = 'block';
+            }
+        }
+    }
 
     if (categorySelect) {
-        categorySelect.addEventListener('change', function() {
-            // Show/Hide "Other" input
-            if (this.value === 'Other') {
-                if (otherCategoryGroup) {
-                    otherCategoryGroup.style.display = 'block';
-                    document.getElementById('other-category').setAttribute('required', 'required');
-                }
-            } else {
-                if (otherCategoryGroup) {
-                    otherCategoryGroup.style.display = 'none';
-                    document.getElementById('other-category').removeAttribute('required');
-                }
-            }
-
-            // Show/Hide Influencer Services
-            if (influencerServices) {
-                const selectedOption = this.options[this.selectedIndex];
-                const optGroup = selectedOption.parentNode;
-                
-                if (optGroup.tagName === 'OPTGROUP' && optGroup.label === 'Influencer & Creator') {
-                    influencerServices.style.display = 'block';
-                } else {
-                    influencerServices.style.display = 'none';
-                }
-            }
-        });
+        categorySelect.addEventListener('change', toggleCategoryServices);
+        // Initial check in case of browser back/refresh
+        toggleCategoryServices();
     }
 
     // --- Password Visibility Toggle ---

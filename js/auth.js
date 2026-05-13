@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (registerForm) {
         registerForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            // Show success message or OTP modal
-            alert("Registration Successful!\n\nThank you for registering with Revanta Growth Media. Please verify your email to activate your account. Our team will contact you soon.");
-            window.location.href = "verify-email.html";
+            // Show success message
+            alert("Registration Successful!\n\nThank you for registering with Revanta Growth Media. Your account has been created. You can now login to your dashboard.");
+            window.location.href = "login.html";
         });
     }
 
@@ -137,13 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = document.getElementById('email').value;
-            // Mocking unverified check
-            if(email === "unverified@test.com") {
-                document.getElementById('unverified-alert').style.display = 'flex';
-            } else {
-                window.location.href = "dashboard.html";
-            }
+            // Successful login simulation
+            window.location.href = "dashboard.html";
         });
     }
 

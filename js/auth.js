@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         registerForm.addEventListener('submit', function(e) {
             e.preventDefault();
             // Show success message or OTP modal
-            alert("Registration Successful! Please check your email to verify your account.");
+            alert("Registration Successful!\n\nThank you for registering with Revanta Growth Media. Please verify your email to activate your account. Our team will contact you soon.");
             window.location.href = "login.html";
         });
     }

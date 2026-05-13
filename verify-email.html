@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email | Revanta Growth Media</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <div class="auth-layout">
+        <!-- Left Side: Branding -->
+        <div class="auth-left">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <span class="logo-text" style="color: var(--white);"><span class="highlight" style="color: var(--secondary-red);">R</span>evanta <span class="highlight" style="color: var(--secondary-red);">G</span>rowth <span class="highlight" style="color: var(--secondary-red);">M</span>edia</span>
+                </a>
+            </div>
+            <h1>Security & Verification</h1>
+            <p>Please verify your email address to activate your business account and start growing online.</p>
+        </div>
+
+        <!-- Right Side: Verification Form -->
+        <div class="auth-right">
+            <div class="auth-container">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div style="width: 80px; height: 80px; background: rgba(10, 37, 92, 0.1); color: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 20px;">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h2>Verify Your Email</h2>
+                    <p class="subtitle">We've sent a 6-digit OTP to your business email address.</p>
+                </div>
+
+                <form id="verification-form" action="login.html" method="GET">
+                    <div class="form-group" style="display: flex; gap: 10px; justify-content: center; margin-bottom: 30px;">
+                        <input type="text" class="form-control" maxlength="1" style="width: 50px; text-align: center; font-size: 1.5rem; font-weight: bold;" required>
+                        <input type="text" class="form-control" maxlength="1" style="width: 50px; text-align: center; font-size: 1.5rem; font-weight: bold;" required>
+                        <input type="text" class="form-control" maxlength="1" style="width: 50px; text-align: center; font-size: 1.5rem; font-weight: bold;" required>
+                        <input type="text" class="form-control" maxlength="1" style="width: 50px; text-align: center; font-size: 1.5rem; font-weight: bold;" required>
+                        <input type="text" class="form-control" maxlength="1" style="width: 50px; text-align: center; font-size: 1.5rem; font-weight: bold;" required>
+                        <input type="text" class="form-control" maxlength="1" style="width: 50px; text-align: center; font-size: 1.5rem; font-weight: bold;" required>
+                    </div>
+
+                    <div class="auth-actions" style="margin-top: 0;">
+                        <button type="submit" class="btn btn-primary btn-block">Verify & Activate Account</button>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p style="font-size: 0.9rem; color: #666;">Didn't receive the code? <a href="#" class="text-red" style="font-weight: 600;">Resend OTP</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-focus next input
+        const inputs = document.querySelectorAll('#verification-form input');
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', () => {
+                if (input.value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && input.value.length === 0 && index > 0) {
+                    inputs[index - 1].focus();
+                }
+            });
+        });
+
+        document.getElementById('verification-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Email Verified Successfully! You can now login.");
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>

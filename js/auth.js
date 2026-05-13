@@ -26,12 +26,29 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
+        function validateStep(stepIndex) {
+            const currentStepEl = steps[stepIndex];
+            const inputs = currentStepEl.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    input.reportValidity();
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
         nextBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Here we would normally validate the current step
-                if (currentStep < steps.length - 1) {
-                    currentStep++;
-                    updateSteps();
+                if (validateStep(currentStep)) {
+                    if (currentStep < steps.length - 1) {
+                        currentStep++;
+                        updateSteps();
+                        window.scrollTo(0, 0);
+                    }
                 }
             });
         });
@@ -111,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             // Show success message or OTP modal
             alert("Registration Successful!\n\nThank you for registering with Revanta Growth Media. Please verify your email to activate your account. Our team will contact you soon.");
-            window.location.href = "login.html";
+            window.location.href = "verify-email.html";
         });
     }
 

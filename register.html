@@ -87,36 +87,51 @@
                             <label>Business Category *</label>
                             <select class="form-control" id="business-category" required>
                                 <option value="" disabled selected>Select Business Type</option>
-                                <option value="Retail Store">Retail Store</option>
-                                <option value="E-commerce Business">E-commerce Business</option>
-                                <option value="Restaurant / Cafe / Food Business">Restaurant / Cafe / Food Business</option>
-                                <option value="Hotel / Resort / Travel Agency">Hotel / Resort / Travel Agency</option>
-                                <option value="Real Estate">Real Estate</option>
-                                <option value="Education / Coaching Institute">Education / Coaching Institute</option>
-                                <option value="Health Clinic / Doctor / Hospital">Health Clinic / Doctor / Hospital</option>
-                                <option value="Fitness / Gym / Wellness">Fitness / Gym / Wellness</option>
-                                <option value="Beauty Salon / Spa">Beauty Salon / Spa</option>
-                                <option value="Fashion / Clothing">Fashion / Clothing</option>
-                                <option value="Jewellery Business">Jewellery Business</option>
-                                <option value="Grocery / Supermarket">Grocery / Supermarket</option>
-                                <option value="Automobile / Car Dealer / Bike Dealer">Automobile / Car Dealer / Bike Dealer</option>
-                                <option value="Event Management">Event Management</option>
-                                <option value="Interior Design / Architecture">Interior Design / Architecture</option>
-                                <option value="Construction / Contractor">Construction / Contractor</option>
-                                <option value="Manufacturing Business">Manufacturing Business</option>
-                                <option value="Wholesale / Distributor">Wholesale / Distributor</option>
-                                <option value="Software / IT Company">Software / IT Company</option>
-                                <option value="Digital Services">Digital Services</option>
-                                <option value="Consultancy Services">Consultancy Services</option>
-                                <option value="Financial Services">Financial Services</option>
-                                <option value="Legal Services">Legal Services</option>
-                                <option value="NGO / Trust">NGO / Trust</option>
-                                <option value="Photography / Videography">Photography / Videography</option>
-                                <option value="Bakery / Sweet Shop">Bakery / Sweet Shop</option>
-                                <option value="Home Services">Home Services</option>
-                                <option value="Courier / Logistics">Courier / Logistics</option>
-                                <option value="Agriculture Business">Agriculture Business</option>
-                                <option value="Pet Care Business">Pet Care Business</option>
+                                <optgroup label="Standard Business">
+                                    <option value="Retail Store">Retail Store</option>
+                                    <option value="E-commerce Business">E-commerce Business</option>
+                                    <option value="Restaurant / Cafe / Food Business">Restaurant / Cafe / Food Business</option>
+                                    <option value="Hotel / Resort / Travel Agency">Hotel / Resort / Travel Agency</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Education / Coaching Institute">Education / Coaching Institute</option>
+                                    <option value="Health Clinic / Doctor / Hospital">Health Clinic / Doctor / Hospital</option>
+                                    <option value="Fitness / Gym / Wellness">Fitness / Gym / Wellness</option>
+                                    <option value="Beauty Salon / Spa">Beauty Salon / Spa</option>
+                                    <option value="Fashion / Clothing">Fashion / Clothing</option>
+                                    <option value="Jewellery Business">Jewellery Business</option>
+                                    <option value="Grocery / Supermarket">Grocery / Supermarket</option>
+                                    <option value="Automobile / Car Dealer / Bike Dealer">Automobile / Car Dealer / Bike Dealer</option>
+                                    <option value="Event Management">Event Management</option>
+                                    <option value="Interior Design / Architecture">Interior Design / Architecture</option>
+                                    <option value="Construction / Contractor">Construction / Contractor</option>
+                                    <option value="Manufacturing Business">Manufacturing Business</option>
+                                    <option value="Wholesale / Distributor">Wholesale / Distributor</option>
+                                    <option value="Software / IT Company">Software / IT Company</option>
+                                    <option value="Digital Services">Digital Services</option>
+                                    <option value="Consultancy Services">Consultancy Services</option>
+                                    <option value="Financial Services">Financial Services</option>
+                                    <option value="Legal Services">Legal Services</option>
+                                    <option value="NGO / Trust">NGO / Trust</option>
+                                    <option value="Photography / Videography">Photography / Videography</option>
+                                    <option value="Bakery / Sweet Shop">Bakery / Sweet Shop</option>
+                                    <option value="Home Services">Home Services</option>
+                                    <option value="Courier / Logistics">Courier / Logistics</option>
+                                    <option value="Agriculture Business">Agriculture Business</option>
+                                    <option value="Pet Care Business">Pet Care Business</option>
+                                </optgroup>
+                                <optgroup label="Influencer & Creator">
+                                    <option value="Fashion & Beauty Influencer">Fashion & Beauty Influencer</option>
+                                    <option value="Lifestyle & Travel Influencer">Lifestyle & Travel Influencer</option>
+                                    <option value="Tech & Gadget Reviewer">Tech & Gadget Reviewer</option>
+                                    <option value="Fitness & Health Creator">Fitness & Health Creator</option>
+                                    <option value="Food & Cooking Influencer">Food & Cooking Influencer</option>
+                                    <option value="Gaming & Esports Creator">Gaming & Esports Creator</option>
+                                    <option value="Educational / Finance Influencer">Educational / Finance Influencer</option>
+                                    <option value="Business & Finance Influencer">Business & Finance Influencer</option>
+                                    <option value="Public Figure / Artist">Public Figure / Artist</option>
+                                    <option value="Blogger / Vlogger">Blogger / Vlogger</option>
+                                    <option value="General Content Creator">General Content Creator</option>
+                                </optgroup>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
@@ -161,8 +176,8 @@
 
                     <!-- Step 3: Required Services -->
                     <div class="form-step" id="step3">
-                        <div class="form-group">
-                            <label>Services Required *</label>
+                        <div class="form-group" id="standard-services">
+                            <label>Business Services Required *</label>
                             <div class="checkbox-group">
                                 <label class="custom-checkbox"><input type="checkbox" name="services" value="Website Design"> Website Design</label>
                                 <label class="custom-checkbox"><input type="checkbox" name="services" value="Landing Page Design"> Landing Page Design</label>
@@ -179,6 +194,28 @@
                                 <label class="custom-checkbox"><input type="checkbox" name="services" value="Video Editing"> Video Editing</label>
                                 <label class="custom-checkbox"><input type="checkbox" name="services" value="WhatsApp Marketing"> WhatsApp Marketing</label>
                                 <label class="custom-checkbox"><input type="checkbox" name="services" value="Other"> Other</label>
+                            </div>
+                        </div>
+
+                        <!-- Influencer Specific Services (Hidden by default) -->
+                        <div class="form-group" id="influencer-services" style="display: none;">
+                            <label>Influencer & Creator Services Required *</label>
+                            <div class="checkbox-group">
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Brand Collaboration & PR"> Brand Collaboration & PR</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Media Kit Design"> Media Kit Design</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Profile Audit & Optimization"> Profile Audit & Opt.</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Content Strategy"> Content Strategy</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Short-form Video Production"> Video Production</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="PR & Event Access"> PR & Event Access</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Growth & Monetization"> Growth & Monetization</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Legal & Contract Support"> Legal & Contract Support</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Personal Branding"> Personal Branding</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Account Management"> Account Management</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Analytics & Reporting"> Analytics & Reporting</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Sponsorship Management"> Sponsorships</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Influencer PR Box Design"> PR Box Design</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Podcast Setup & Production"> Podcast Setup</label>
+                                <label class="custom-checkbox"><input type="checkbox" name="services" value="Other Creator Service"> Other</label>
                             </div>
                         </div>
 

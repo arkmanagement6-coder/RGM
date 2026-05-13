@@ -49,15 +49,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Show "Other" Category Input ---
     const categorySelect = document.getElementById('business-category');
     const otherCategoryGroup = document.getElementById('other-category-group');
+    const influencerServices = document.getElementById('influencer-services');
 
-    if (categorySelect && otherCategoryGroup) {
+    if (categorySelect) {
         categorySelect.addEventListener('change', function() {
+            // Show/Hide "Other" input
             if (this.value === 'Other') {
-                otherCategoryGroup.style.display = 'block';
-                document.getElementById('other-category').setAttribute('required', 'required');
+                if (otherCategoryGroup) {
+                    otherCategoryGroup.style.display = 'block';
+                    document.getElementById('other-category').setAttribute('required', 'required');
+                }
             } else {
-                otherCategoryGroup.style.display = 'none';
-                document.getElementById('other-category').removeAttribute('required');
+                if (otherCategoryGroup) {
+                    otherCategoryGroup.style.display = 'none';
+                    document.getElementById('other-category').removeAttribute('required');
+                }
+            }
+
+            // Show/Hide Influencer Services
+            if (influencerServices) {
+                const selectedOption = this.options[this.selectedIndex];
+                const optGroup = selectedOption.parentNode;
+                
+                if (optGroup.tagName === 'OPTGROUP' && optGroup.label === 'Influencer & Creator') {
+                    influencerServices.style.display = 'block';
+                } else {
+                    influencerServices.style.display = 'none';
+                }
             }
         });
     }

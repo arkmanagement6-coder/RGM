@@ -140,6 +140,22 @@ document.addEventListener('DOMContentLoaded', function() {
             // Successful login simulation
             window.location.href = "dashboard.html";
         });
+    // --- Mobile Sidebar Toggle ---
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            sidebar.classList.toggle('menu-open');
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!sidebar.contains(e.target) && sidebar.classList.contains('menu-open')) {
+                sidebar.classList.remove('menu-open');
+            }
+        });
     }
 
 });

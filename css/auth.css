@@ -432,17 +432,132 @@ select.form-control {
     border: 1px solid #bbf7d0;
 }
 
-/* Responsive */
+.dash-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 992px) {
     .auth-layout { flex-direction: column; }
-    .auth-left { padding: 40px; text-align: center; align-items: center; }
+    .auth-left { 
+        padding: 60px 20px 40px; 
+        text-align: center; 
+        align-items: center; 
+        min-height: auto;
+    }
     .auth-left .brand-logo { position: static; margin-bottom: 30px; }
+    .auth-left h1 { font-size: 2.2rem; }
+    .auth-left p { font-size: 1rem; }
     .auth-right { padding: 40px 20px; }
     
     .dashboard-layout { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; flex-direction: row; align-items: center; padding: 10px 20px; justify-content: space-between; }
-    .sidebar-header { padding: 0; border: none; }
-    .sidebar-menu { display: none; } /* Could add a hamburger menu logic */
-    .dash-stats-grid { grid-template-columns: 1fr; }
-    .checkbox-group { grid-template-columns: 1fr; }
+    
+    /* Mobile Sidebar Toggle Logic */
+    .sidebar { 
+        width: 100%; 
+        height: auto; 
+        position: sticky; 
+        top: 0; 
+        z-index: 100;
+        padding: 10px 0;
+    }
+    .sidebar-header { 
+        padding: 10px 20px; 
+        border: none; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .mobile-menu-toggle {
+        display: block !important;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .sidebar-menu { 
+        display: none; 
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--primary-blue);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 0;
+    }
+    
+    .sidebar.menu-open .sidebar-menu {
+        display: block;
+    }
+
+    .dashboard-header {
+        padding: 15px 20px;
+    }
+    
+    .dashboard-body {
+        padding: 20px;
+    }
+
+    .dash-stats-grid { 
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
 }
+
+@media (max-width: 768px) {
+    .auth-left h1 { font-size: 1.8rem; }
+    .auth-container h2 { font-size: 1.6rem; }
+    
+    .step-indicator {
+        margin-bottom: 30px;
+    }
+    
+    .step-dot {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .auth-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .auth-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dash-main-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .checkbox-group { 
+        grid-template-columns: 1fr; 
+    }
+
+    .dash-card {
+        padding: 20px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .user-profile span {
+        display: none; /* Hide name on very small screens */
+    }
+}
+
+/* Utilities for Mobile Toggle */
+.mobile-menu-toggle {
+    display: none;
+}
+

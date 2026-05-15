@@ -16,7 +16,6 @@ const newServicesMenu = `<ul class="dropdown-menu">
 
 const newAboutMenu = `<ul class="dropdown-menu">
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="team.html">Our Team</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
                             <li><a href="blogs.html">Blogs</a></li>
                         </ul>`;

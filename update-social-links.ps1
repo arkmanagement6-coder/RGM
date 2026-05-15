@@ -2,10 +2,10 @@ $fbOld = '<a href="#"><i class="fa-brands fa-facebook-f"></i></a>'
 $fbNew = '<a href="https://www.facebook.com/profile.php?id=61567641386250" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>'
 
 $igOld = '<a href="#"><i class="fa-brands fa-instagram"></i></a>'
-$igNew = '<a href="https://www.instagram.com/revantagrowthmedia/" target="_blank"><i class="fa-brands fa-instagram"></i></a>'
+$igNew = '<a href="https://www.instagram.com/revanta.growth.media/" target="_blank"><i class="fa-brands fa-instagram"></i></a>'
 
 $inOld = '<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>'
-$inNew = '<a href="https://www.instagram.com/revantagrowthmedia/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>'
+$inNew = '<a href="https://www.instagram.com/revanta.growth.media/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>'
 
 $files = Get-ChildItem -Path . -Filter *.html
 

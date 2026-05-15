@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -134,7 +134,7 @@
                 </div>
                 <div class="detail-row">
                     <span class="detail-label">Amount Paid:</span>
-                    <span class="detail-value" id="pay-amount">â‚¹0.00</span>
+                    <span class="detail-value" id="pay-amount">₹0.00</span>
                 </div>
             </div>
 
@@ -162,9 +162,9 @@
         }
 
         if (amount) {
-            document.getElementById('pay-amount').innerText = "â‚¹" + parseFloat(amount).toLocaleString('en-IN', { minimumFractionDigits: 2 });
+            document.getElementById('pay-amount').innerText = "₹" + parseFloat(amount).toLocaleString('en-IN', { minimumFractionDigits: 2 });
         } else {
-            document.getElementById('pay-amount').innerText = "â‚¹0.00";
+            document.getElementById('pay-amount').innerText = "₹0.00";
         }
     </script>
 <script src="js/payment.js"></script>

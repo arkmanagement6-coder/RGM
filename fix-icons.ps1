@@ -8,6 +8,8 @@ $replacements = @{
     "â€™" = "’"
     "â€¦" = "…"
     "ðŸ˜" = "😊"
+    "ðŸ‘‹" = "👋"
+    "ðŸ“‰" = "📈"
 }
 
 $files = Get-ChildItem -Path . -Filter *.html

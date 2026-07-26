@@ -227,22 +227,29 @@ img { max-width: 100%; display: block; }
         width: 100%;
         background: var(--white);
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        padding: 20px 30px;
-        transition: var(--transition);
+        padding: 0 30px;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
         z-index: 9999;
         opacity: 0;
         visibility: hidden;
+        pointer-events: none;
         transform: translateY(-20px);
-        display: block !important;
-        border-top: 1px solid rgba(0,0,0,0.05);
-        max-height: 80vh;
-        overflow-y: auto;
+        display: none !important;
+        border-top: 0 solid rgba(0,0,0,0.05);
     }
 
     .nav-menu.active { 
+        display: block !important;
+        padding: 20px 30px;
+        height: 80vh;
+        overflow-y: auto;
         opacity: 1;
         visibility: visible;
+        pointer-events: auto;
         transform: translateY(0);
+        border-top-width: 1px;
     }
 
     .nav-overlay {
@@ -255,7 +262,6 @@ img { max-width: 100%; display: block; }
     .dropdown-menu { 
         position: static; 
         opacity: 1; 
-        visibility: visible; 
         box-shadow: none; 
         display: block !important; 
         padding: 0 0 10px 15px; 

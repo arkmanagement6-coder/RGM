@@ -140,6 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Successful login simulation
             window.location.href = "dashboard.html";
         });
+    }
+
     // --- Mobile Sidebar Toggle ---
     const sidebarToggle = document.getElementById('sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
